@@ -68,6 +68,54 @@ public class Test {
 		r1.setHeight(20);
 		c1.getCenter().setX(r1.area()-l1.getStartPoint().getY());
 		System.out.println(c1.getCenter().getX());
+		
+		
+		//Vezbe 4.
+		Point p2=new Point(50,100);
+		System.out.println(p2.isSelected()+" "+p2.getX());
+		Line l2=new Line(p2, new Point(400,500));
+		Rectangle r2=new Rectangle(p2,50,80);
+		
+		System.out.println(p2.toString());//ili System.out.println(p2);
+		System.out.println(l2);
+		System.out.println(r2);
+		
+		int c = 5; 
+		int d = 5; 
+		System.out.println(c == d); 
+		 
+		d = 7; 
+		System.out.println(c == d); 
+		
+		String e = "abcd"; 
+		String f = "abc"; // kreira se novi objekat 
+		System.out.println(e == f);
+
+		
+		String b = "abc";//referencira se postojeci objekat
+		System.out.println(f == b); 
+		
+		String s1 = new String("Hello World");
+		String s2 = new String("Hello World"); // kreira se novi objekat 
+		System.out.println(s1==s2);
+		System.out.println(s1.equals(s2)); // poredjenje po vrednosti jer je redefinisana u klasi String
+		
+		
+		Point p5=new Point();
+		System.out.println(p5 == p2);
+		p5=p2; //dodeljuje se referenca i  vrednost
+		System.out.println(p5);
+		p2.setX(20);
+		System.out.println(p5);
+		System.out.println(p5 == p2);
+		System.out.println(p2);
+		
+		
+		Point p6=new Point(20,100);
+		System.out.println(p6 == p2);
+		System.out.println(p6.equals(p2)); //pre i posle redefinisanja metode*/
+
+
 
 	}
 
