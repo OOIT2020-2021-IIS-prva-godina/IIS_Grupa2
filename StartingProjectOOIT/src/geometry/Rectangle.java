@@ -1,11 +1,12 @@
 package geometry;
 
-public class Rectangle {
+import java.awt.Graphics;
+
+public class Rectangle extends Shape {
 
 	private Point upperLeftPoint;
 	private int width;
 	private int height;
-	private boolean selected;
 
 	public Rectangle() {
 	}
@@ -18,7 +19,10 @@ public class Rectangle {
 
 	public Rectangle(Point upperLeftPoint, int width, int height, boolean selected) {
 		this(upperLeftPoint, width, height);
-		this.selected = selected;
+
+		setSelected(selected);
+		// menja se prilikom dodavanja Shape
+		// this.selected = selected;
 	}
 
 	public int area() {
@@ -43,19 +47,24 @@ public class Rectangle {
 			return false;
 
 	}
-	
+
 	public boolean contains(int x, int y) {
-		if(x>=upperLeftPoint.getX() && x<=upperLeftPoint.getX()+width
-				&& y>=upperLeftPoint.getY() && y<=upperLeftPoint.getY()+height)
+		if (x >= upperLeftPoint.getX() && x <= upperLeftPoint.getX() + width && y >= upperLeftPoint.getY()
+				&& y <= upperLeftPoint.getY() + height)
 			return true;
 		return false;
 	}
-	
+
 	public boolean contains(Point p) {
-		if(p.getX()>=upperLeftPoint.getX() && p.getX()<=upperLeftPoint.getX()+width
-				&& p.getY()>=upperLeftPoint.getY() && p.getY()<=upperLeftPoint.getY()+height)
+		if (p.getX() >= upperLeftPoint.getX() && p.getX() <= upperLeftPoint.getX() + width
+				&& p.getY() >= upperLeftPoint.getY() && p.getY() <= upperLeftPoint.getY() + height)
 			return true;
 		return false;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		g.drawRect(upperLeftPoint.getX(), upperLeftPoint.getY(), width, height);
 	}
 
 	public Point getUpperLeftPoint() {
@@ -80,14 +89,6 @@ public class Rectangle {
 
 	public void setHeight(int height) {
 		this.height = height;
-	}
-
-	public boolean isSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
 	}
 
 	public String toString() {
