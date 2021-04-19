@@ -52,6 +52,29 @@ public class Line extends Shape{
 		g.drawLine(startPoint.getX(), startPoint.getY(), endPoint.getX(), endPoint.getY());
 		
 	}
+	
+	
+
+	@Override
+	public void moveTo(int x, int y) {
+		//nije moguce implementirati
+		
+	}
+
+	@Override
+	public void moveBy(int x, int y) {
+		startPoint.moveBy(x, y);
+		endPoint.moveBy(x, y);
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		
+		if(o instanceof Line) {
+			return (int)(this.length()-((Line)o).length());
+		}
+		return 0;
+	}
 
 	public void setStartPoint(Point startPoint) {
 		this.startPoint = startPoint;

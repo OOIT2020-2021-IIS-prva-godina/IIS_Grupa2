@@ -114,7 +114,40 @@ public class Test {
 		Point p6=new Point(20,100);
 		System.out.println(p6 == p2);
 		System.out.println(p6.equals(p2)); //pre i posle redefinisanja metode*/
-
+		
+		
+		System.out.println("\nVezbe 7 - testiranje metoda");
+		System.out.println(p1);
+		p1.moveBy(3,5);
+		System.out.println(p1);
+		p1.moveTo(3,5);
+		System.out.println(p1);
+		
+		System.out.println(l1);
+		l1.moveBy(3,5);
+		System.out.println(l1);
+		l1.moveTo(3,5);//ne radi nista
+		System.out.println(l1);
+		
+		System.out.println(r1);
+		r1.moveBy(3,5);
+		System.out.println(r1);
+		r1.moveTo(3,5);
+		System.out.println(r1);
+		
+		
+		System.out.println(c1);
+		c1.moveBy(3,5);
+		System.out.println(c1);
+		c1.moveTo(3,5);
+		System.out.println(c1);
+		
+		Donut d1=new Donut(new Point(800,100), 50, 25);
+		System.out.println(d1);
+		d1.moveBy(3,5);
+		System.out.println(d1);
+		d1.moveTo(3,5);
+		System.out.println(d1);
 
 
 	}
