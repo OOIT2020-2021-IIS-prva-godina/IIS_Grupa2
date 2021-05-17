@@ -265,6 +265,36 @@ public class FrmTest extends JFrame {
 			}
 		});
 		pnlSouth.add(btnDodajBoju);
+		
+		JButton btnPromeniRGB = new JButton("Promeni RGB");
+		btnPromeniRGB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				DlgTest dlgPromena=new DlgTest();
+				
+				try {
+				String[] split = dlmBoje.getElementAt(lstBoje.getSelectedIndex()).split(" ");
+				dlgPromena.txtCrvena.setText(split[0]);
+				dlgPromena.txtZelena.setText(split[1]);
+				dlgPromena.txtPlava.setText(split[2]);
+				dlgPromena.setVisible(true);
+				
+				if(dlgPromena.isOk) {
+					dlmBoje.removeElementAt(lstBoje.getSelectedIndex());
+					dlmBoje.addElement(dlgPromena.txtCrvena.getText()+" "+dlgPromena.txtZelena.getText()+" "+dlgPromena.txtPlava.getText());
+					pnlCenter.setBackground(new Color(Integer.parseInt(dlgPromena.txtCrvena.getText()),
+							Integer.parseInt(dlgPromena.txtZelena.getText()), Integer.parseInt(dlgPromena.txtPlava.getText())));
+					
+				}
+				
+				}catch(Exception ex) {
+					JOptionPane.showMessageDialog(null, "Morate selektovati adekvatnu boju");
+				}
+				
+				
+			}
+		});
+		pnlSouth.add(btnPromeniRGB);
 
 		// donji panel
 		JPanel pnlNorth = new JPanel();
